@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Harvey Labringca, Senior Graphic Designer based in Makati, Philippines." />
+  <title>Harvey Labringca — Senior Graphic Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#111111; --paper:#f5f3ee; --lime:#d8ff36; --line:rgba(17,17,17,.16); --muted:#66635d; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Manrope,Arial,sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1180px, calc(100% - 40px)); margin:auto; }
+    nav { display:flex; justify-content:space-between; align-items:center; min-height:76px; border-bottom:1px solid var(--line); }
+    .logo { font-size:14px; font-weight:800; letter-spacing:-.04em; }
+    .nav-links { display:flex; gap:24px; font:500 12px/1 'DM Mono',monospace; text-transform:uppercase; }
+    .nav-links a:hover { text-decoration:underline; text-underline-offset:4px; }
+    .eyebrow { font:500 11px/1 'DM Mono',monospace; letter-spacing:.07em; text-transform:uppercase; }
+    .hero { min-height:calc(100svh - 77px); display:grid; align-content:center; padding:70px 0 90px; }
+    .hero h1 { max-width:950px; margin:22px 0 28px; font-size:clamp(52px,8.4vw,126px); line-height:.91; letter-spacing:-.085em; font-weight:800; }
+    .hero h1 em { font-style:normal; color:#fff; background:var(--ink); padding:0 .11em .06em; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+    .hero-bottom { display:flex; justify-content:space-between; gap:40px; align-items:end; border-top:1px solid var(--line); padding-top:22px; }
+    .hero-bottom p { max-width:450px; margin:0; color:var(--muted); font-size:17px; line-height:1.58; }
+    .button { display:inline-flex; align-items:center; gap:12px; background:var(--ink); color:#fff; padding:15px 18px; font:500 12px/1 'DM Mono',monospace; text-transform:uppercase; white-space:nowrap; }
+    .button:hover { background:#333; }
+    section { padding:108px 0; border-top:1px solid var(--line); }
+    .section-head { display:grid; grid-template-columns:1fr 2fr; gap:36px; margin-bottom:48px; }
+    .section-head h2 { margin:0; font-size:clamp(30px,4vw,52px); letter-spacing:-.065em; line-height:.98; }
+    .section-head p { max-width:590px; margin:0; color:var(--muted); font-size:18px; line-height:1.62; }
+    .work-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .project { position:relative; min-height:420px; display:flex; flex-direction:column; justify-content:space-between; padding:25px; background:#252525; color:white; overflow:hidden; }
+    .project:nth-child(2) { background:#e3482e; }
+    .project:nth-child(3) { background:#506c4e; }
+    .project:nth-child(4) { background:#1d55bd; }
+    .project:hover .project-art { transform:scale(1.06) rotate(2deg); }
+    .project-art { position:absolute; inset:0; transition:transform .5s ease; opacity:.95; }
+    .art-one:before { content:'FORM'; position:absolute; left:7%; top:21%; font-size:clamp(62px,11vw,150px); font-weight:800; letter-spacing:-.12em; transform:rotate(-14deg); }
+    .art-one:after { content:''; position:absolute; width:56%; aspect-ratio:1; right:-12%; bottom:-19%; border-radius:50%; background:var(--lime); }
+    .art-two:before { content:'KIND'; position:absolute; top:12%; right:8%; font-size:clamp(61px,10vw,140px); font-weight:800; letter-spacing:-.12em; writing-mode:vertical-rl; }
+    .art-two:after { content:'✳'; position:absolute; left:8%; bottom:3%; font-size:230px; line-height:1; color:#ffd83f; }
+    .art-three:before { content:'MORNING\A MARKET'; white-space:pre; position:absolute; left:8%; top:26%; font-size:clamp(38px,6vw,88px); font-weight:800; line-height:.8; letter-spacing:-.09em; }
+    .art-three:after { content:''; position:absolute; width:43%; aspect-ratio:1; border:10px solid var(--lime); border-radius:50%; right:6%; top:13%; }
+    .art-four:before { content:'00—24'; position:absolute; left:7%; top:23%; font:500 clamp(52px,9vw,122px)/1 'DM Mono',monospace; letter-spacing:-.09em; }
+    .art-four:after { content:'IDEAS\A IN MOTION'; white-space:pre; position:absolute; bottom:10%; right:8%; font-size:28px; font-weight:800; line-height:.82; letter-spacing:-.08em; }
+    .project-meta, .project-title { position:relative; z-index:1; }
+    .project-meta { display:flex; justify-content:space-between; gap:10px; font:500 11px/1 'DM Mono',monospace; text-transform:uppercase; }
+    .project-title h3 { margin:0 0 8px; font-size:28px; letter-spacing:-.065em; }
+    .project-title p { margin:0; font:400 11px/1.5 'DM Mono',monospace; text-transform:uppercase; opacity:.85; }
+    .about-grid { display:grid; grid-template-columns:1fr 2fr; gap:36px; }
+    .about-copy { font-size:clamp(24px,3vw,39px); font-weight:600; line-height:1.18; letter-spacing:-.06em; }
+    .about-copy p { margin:0; }
+    .services { display:grid; grid-template-columns:repeat(2,1fr); gap:0; border-top:1px solid var(--line); border-left:1px solid var(--line); }
+    .service { min-height:145px; padding:20px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .service span { display:block; margin-bottom:35px; font:500 11px/1 'DM Mono',monospace; color:var(--muted); }
+    .service h3 { margin:0; font-size:18px; letter-spacing:-.045em; }
+    .contact { background:var(--ink); color:var(--paper); border-top:none; }
+    .contact .eyebrow { color:var(--lime); }
+    .contact h2 { max-width:900px; margin:20px 0 38px; font-size:clamp(48px,7.5vw,106px); line-height:.9; letter-spacing:-.09em; }
+    .contact h2 a { text-decoration:underline; text-decoration-color:var(--lime); text-underline-offset:.12em; }
+    .contact-row { display:flex; justify-content:space-between; gap:20px; padding-top:24px; border-top:1px solid rgba(255,255,255,.25); font:500 12px/1.4 'DM Mono',monospace; text-transform:uppercase; }
+    footer { background:var(--ink); color:#aaa; padding:20px 0 28px; font:400 11px/1 'DM Mono',monospace; text-transform:uppercase; }
+    @media (max-width:720px) { .wrap{width:min(100% - 28px,1180px)} .nav-links{gap:14px;font-size:10px} .hero{padding:50px 0 60px}.hero-bottom,.section-head,.about-grid{grid-template-columns:1fr;display:grid}.hero-bottom{gap:22px}.work-grid{grid-template-columns:1fr}.project{min-height:360px}.section-head{margin-bottom:32px} section{padding:76px 0}.services{grid-template-columns:1fr}.contact-row{display:grid;gap:12px} }
+  </style>
+</head>
+<body>
+  <header class="wrap"><nav><a class="logo" href="#top">HARVEY LABRINGCA®</a><div class="nav-links"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav></header>
+  <main id="top">
+    <div class="wrap hero">
+      <div class="eyebrow">Senior Graphic Designer / Makati, Philippines</div>
+      <h1>Making brands <em>impossible</em> to ignore.</h1>
+      <div class="hero-bottom"><p>I turn sharp ideas into memorable identities, campaigns, and visual systems made for people to notice.</p><a class="button" href="#work">View selected work ↘</a></div>
+    </div>
+    <section id="work"><div class="wrap"><div class="section-head"><h2>Selected<br>work.</h2><p>A collection of brand, campaign, packaging, and digital design directions. Replace these visual placeholders with your strongest Behance project images and link each card to its case study.</p></div>
+      <div class="work-grid">
+        <a class="project" href="https://www.behance.net/harveylabringca" target="_blank" rel="noreferrer"><div class="project-art art-one"></div><div class="project-meta"><span>01 / Identity</span><span>2026</span></div><div class="project-title"><h3>Form & Function</h3><p>Brand identity · Art direction</p></div></a>
+        <a class="project" href="https://www.behance.net/harveylabringca" target="_blank" rel="noreferrer"><div class="project-art art-two"></div><div class="project-meta"><span>02 / Campaign</span><span>2026</span></div><div class="project-title"><h3>Kind of Loud</h3><p>Campaign design · Digital</p></div></a>
+        <a class="project" href="https://www.behance.net/harveylabringca" target="_blank" rel="noreferrer"><div class="project-art art-three"></div><div class="project-meta"><span>03 / Packaging</span><span>2025</span></div><div class="project-title"><h3>Morning Market</h3><p>Packaging · Visual identity</p></div></a>
+        <a class="project" href="https://www.behance.net/harveylabringca" target="_blank" rel="noreferrer"><div class="project-art art-four"></div><div class="project-meta"><span>04 / Digital</span><span>2025</span></div><div class="project-title"><h3>Ideas in Motion</h3><p>Social media · Content system</p></div></a>
+      </div></div></section>
+    <section id="about"><div class="wrap"><div class="about-grid"><div class="eyebrow">About / Services</div><div class="about-copy"><p>I’m Harvey Labringca, a graphic designer who builds clear, energetic visual work for brands that want to say something worth remembering.</p></div></div>
+      <div class="services" style="margin-top:65px"><div class="service"><span>01</span><h3>Brand Identity</h3></div><div class="service"><span>02</span><h3>Campaign Design</h3></div><div class="service"><span>03</span><h3>Social & Digital</h3></div><div class="service"><span>04</span><h3>Print & Packaging</h3></div></div>
+    </div></section>
+    <section class="contact" id="contact"><div class="wrap"><div class="eyebrow">Available for freelance & collaborations</div><h2>Have a good idea?<br><a href="mailto:your@email.com">Let’s make it real.</a></h2><div class="contact-row"><span>Based in Makati, Philippines</span><a href="https://www.behance.net/harveylabringca" target="_blank" rel="noreferrer">Behance ↗</a><a href="mailto:your@email.com">your@email.com ↗</a></div></div></section>
+  </main>
+  <footer><div class="wrap">© 2026 Harvey Labringca — All rights reserved.</div></footer>
+</body>
+</html>
